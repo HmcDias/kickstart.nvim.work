@@ -228,17 +228,18 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
-  lazy = false,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('nvim-tree').setup {}
+    end,
   },
-  config = function()
-    require("nvim-tree").setup {}
-  end,
-  }, 
   'nvim-tree/nvim-web-devicons',
+  'sindrets/diffview.nvim',
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -420,7 +421,7 @@ require('lazy').setup({
     end,
   },
 
- { -- LSP Configuration & Plugins
+  { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
